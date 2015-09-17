@@ -1,0 +1,44 @@
+@import "variable";
+.zchart{
+    rect.bar{
+        fill: @chart-color;
+        &:hover{
+            fill: @chart-hover-color;
+        }
+    }
+    .line{
+        path{
+            fill: none;
+            stroke: @chart-color;
+        }
+        circle{
+            fill: @chart-color;
+            stroke: none;
+        }
+    }
+    .axis {
+        text {
+            font: 10px sans-serif;
+            stroke: none;
+        }
+        &.x{
+            text{
+                fill: @axis-x-text-color;
+            }
+        }
+        &.y{
+            text{
+                fill: @axis-y-text-color;
+            }
+        }
+
+        line,
+        path{
+            fill: none;
+            stroke: @axis-line-color;
+            shape-rendering: crispEdges;
+        }
+
+    }
+}
+

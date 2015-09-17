@@ -1,0 +1,37 @@
+{
+  "name": "zchart",
+  "version": "0.0.1",
+  "description": "Chart of zero, based on d3.js",
+  "main": "src/zchart.js",
+  "directories": {
+    "example": "examples"
+  },
+  "scripts": {
+    "build": "browserify ./src/zchart.js -o ./dist/zchart.js",
+    "watch": "watchify ./src/zchart.js -o ./dist/zchart.js -v"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@gitlab.alibaba-inc.com:tao.qit/zchart.git"
+  },
+  "keywords": [
+    "zchart",
+    "d3",
+    "data visualization"
+  ],
+  "author": "tao.qit (导演)",
+  "license": "MIT",
+  "dependencies": {
+    "browserify": "~11.0.1",
+    "d3": "~3.5.6",
+    "jquery": "~2.1.4",
+    "lodash": "~3.10.1"
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-concat": "~0.5.1",
+    "grunt-contrib-less": "~1.0.1",
+    "grunt-contrib-watch": "~0.6.1",
+    "watchify": "~3.3.1"
+  }
+}

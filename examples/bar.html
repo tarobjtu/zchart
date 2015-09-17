@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+    <link rel="stylesheet" href="../dist/zchart.css"/>
+    <style>
+        svg {
+            margin: 80px auto;
+            display: block;
+        }
+    </style>
+</head>
+<body>
+
+    <script src="../dist/zchart.js"></script>
+    <script>
+        function randomData() {
+            return Math.random() * 50;
+        }
+
+        var numberOfDataPoint = 20;
+
+        function getData(){
+            return d3.range(numberOfDataPoint).map(function (i) {
+                return randomData();
+            });
+        }
+
+
+        var options = {
+            width : 900,
+            height : 400,
+            xAxis : {
+                type : 'value',
+                data : d3.range(numberOfDataPoint)
+            },
+            yAxis : {
+                type : 'value'
+            },
+            dataZoom: {
+                start : 30,
+                end : 70
+            },
+            series : [
+                {
+                    name: 'Unit Price',
+                    type:'bar',
+                    data: getData(),
+                    markPoint: {
+                        data: [
+                            {type : 'max', name: '最大值'},
+                            {type : 'min', name: '最小值'}
+                        ]
+                    },
+                    markLine: {
+                        data: [
+                            {type : 'average', name: '平均值'}
+                        ]
+                    }
+                }
+            ]
+        };
+
+        var barChart = new Zchart(options);
+        barChart.render();
+    </script>
+</body>
+</html>
